@@ -1,6 +1,7 @@
 package txt
 
 import spec.ReportGenerator
+import spec.styles.StyleConfig
 import java.io.File
 
 class PlainTextExporter : ReportGenerator {
@@ -12,7 +13,8 @@ class PlainTextExporter : ReportGenerator {
         rows: List<List<String>>,
         destination: String?,
         title: String?,
-        summary: Map<String, Any>
+        summary: Map<String, Any>,
+        styles: StyleConfig
     ): String {
         val sb = StringBuilder()
         val lineWidth = 80

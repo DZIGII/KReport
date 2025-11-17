@@ -1,212 +1,69 @@
-<!DOCTYPE html>
-<html lang='en'>
+<html>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Studenti</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-        .report-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .report-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        .report-title {
-            font-size: 2.5em;
-            font-weight: 300;
-            margin-bottom: 10px;
-        }
-        .report-subtitle {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-        .table-section {
-            padding: 30px;
-        }
-        .section-title {
-            font-size: 1.5em;
-            color: #667eea;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e9ecef;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95em;
-        }
-        .data-table th {
-            background: #667eea;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .data-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .data-table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-        .data-table tr:hover {
-            background: #e3f2fd;
-            transition: background 0.3s ease;
-        }
-        .summary-section {
-            padding: 30px;
-            background: #f8f9fa;
-            border-top: 1px solid #e9ecef;
-        }
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .summary-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .summary-label {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .summary-value {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #667eea;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #6c757d;
-            font-size: 0.9em;
-            border-top: 1px solid #e9ecef;
-        }
-        @media (max-width: 768px) {
-            .data-table {
-                font-size: 0.8em;
-            }
-            .data-table th,
-            .data-table td {
-                padding: 8px 10px;
-            }
-            .report-title {
-                font-size: 2em;
-            }
-        }
-    </style>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; }
+h1 { text-align:center; }
+table { width:100%; border-collapse: collapse; margin-top:20px; }
+th, td { border:1px solid #aaa; padding:8px; text-align:left; }
+th { background:#f0f0f0; }
+.summary { margin-top:25px; }
+.summary h2 { margin-bottom:10px; }
+</style>
 </head>
 <body>
-    <div class='report-container'>
-        <div class='report-header'>
-            <h1 class='report-title'>Studenti</h1>
-            <div class='report-subtitle'>Generated Report</div>
-        </div>
-        <div class='table-section'>
-            <h2 class='section-title'>Data Table</h2>
-            <table class='data-table'>
-                <thead>
-                    <tr>
-                        <th> </th>
-                        <th>Ime </th>
-                        <th>Prezime</th>
-                        <th>Godina upisa</th>
-                        <th>Smer</th>
-                        <th>ESPB</th>
-                        <th>Menjao smer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nikola</td>
-                        <td>Raskovic</td>
-                        <td>2024</td>
-                        <td>RN</td>
-                        <td>40</td>
-                        <td>DA</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jovan </td>
-                        <td>Kosevic</td>
-                        <td>2023</td>
-                        <td>RN</td>
-                        <td>110</td>
-                        <td>NE</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Nikola</td>
-                        <td>Marilovic</td>
-                        <td>2024</td>
-                        <td>SI</td>
-                        <td>84</td>
-                        <td>DA</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Katarina </td>
-                        <td>Gordic</td>
-                        <td>2023</td>
-                        <td>RN</td>
-                        <td>120</td>
-                        <td>NE</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class='summary-section'>
-            <h2 class='section-title'>Summary</h2>
-            <div class='summary-grid'>
-                <div class='summary-item'>
-                    <div class='summary-label'>Count</div>
-                    <div class='summary-value'>4</div>
-                </div>
-                <div class='summary-item'>
-                    <div class='summary-label'>Average espb</div>
-                    <div class='summary-value'>88.5</div>
-                </div>
-                <div class='summary-item'>
-                    <div class='summary-label'>Max espb</div>
-                    <div class='summary-value'>120.0</div>
-                </div>
-                <div class='summary-item'>
-                    <div class='summary-label'>Espb over 60</div>
-                    <div class='summary-value'>3</div>
-                </div>
-            </div>
-        </div>
-        <div class='footer'>
-            Generated on 2025-11-03T02:12:12.644521400
-        </div>
-    </div>
+<h1>Studenti</h1>
+<table>
+<tr>
+  <th style='font-weight: bold;color: #FF0000;'> </th>
+  <th style=''>Ime </th>
+  <th style='font-style: italic;'>Prezime</th>
+  <th style=''>Godina upisa</th>
+  <th style=''>Smer</th>
+  <th style=''>ESPB</th>
+  <th style=''>Menjao smer</th>
+<tr>
+  <td style=''>1</td>
+  <td style='font-weight: bold;'>Nikola</td>
+  <td style=''>Raskovic</td>
+  <td style='font-style: italic;'>2024</td>
+  <td style='color: #008000;'>RN</td>
+  <td style=''>40</td>
+  <td style=''>DA</td>
+</tr>
+<tr>
+  <td style=''>2</td>
+  <td style='font-weight: bold;'>Jovan </td>
+  <td style=''>Kosevic</td>
+  <td style='font-style: italic;'>2023</td>
+  <td style='color: #008000;'>RN</td>
+  <td style=''>110</td>
+  <td style=''>NE</td>
+</tr>
+<tr>
+  <td style=''>3</td>
+  <td style='font-weight: bold;'>Nikola</td>
+  <td style=''>Marilovic</td>
+  <td style='font-style: italic;'>2024</td>
+  <td style='color: #008000;'>SI</td>
+  <td style=''>84</td>
+  <td style=''>DA</td>
+</tr>
+<tr>
+  <td style=''>4</td>
+  <td style='font-weight: bold;'>Katarina </td>
+  <td style=''>Gordic</td>
+  <td style='font-style: italic;'>2023</td>
+  <td style='color: #008000;'>RN</td>
+  <td style=''>120</td>
+  <td style=''>NE</td>
+</tr>
+</table>
+<div class='summary'>
+<h2>Summary</h2>
+<p><strong>Count:</strong> 4</p>
+<p><strong>Average espb:</strong> 88.5</p>
+<p><strong>Max espb:</strong> 120.0</p>
+<p><strong>Espb over 60:</strong> 3</p>
+</div>
 </body>
 </html>

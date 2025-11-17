@@ -14,7 +14,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(project(":spec"))
-    implementation("org.apache.pdfbox:pdfbox:3.0.1")
+    implementation("com.github.librepdf:openpdf:1.3.30")
 }
 
 publishing {

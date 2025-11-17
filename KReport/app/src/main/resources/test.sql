@@ -1,0 +1,56 @@
+DROP TABLE IF EXISTS studenti;
+
+CREATE TABLE studenti (
+    Indeks TEXT,
+    Ime TEXT,
+    Prezime TEXT,
+    Godina INTEGER,
+    Smer TEXT,
+    ESPB INTEGER,
+    Prosek REAL,
+    Polozeni INTEGER,
+    Nepolozeni INTEGER,
+    Status TEXT,
+    CenaSkolarine REAL,
+    Popust REAL
+);
+
+INSERT INTO studenti (Indeks, Ime, Prezime, Godina, Smer, ESPB, Prosek, Polozeni, Nepolozeni, Status, CenaSkolarine, Popust) VALUES
+('2021/001', 'Marko', 'Jovanović', 1, 'Racunarstvo', 48, 7.8, 8, 2, 'Budzet', 0, 0),
+('2021/002', 'Jelena', 'Petrović', 1, 'Menadžment', 52, 8.4, 9, 1, 'Samofinansiranje', 150000, 0.1),
+('2021/003', 'Nikola', 'Rakić', 2, 'Racunarstvo', 95, 9.1, 17, 0, 'Budzet', 0, 0),
+('2021/004', 'Ana', 'Milovanović', 2, 'Informatika', 88, 8.2, 15, 2, 'Samofinansiranje', 150000, 0.05),
+('2021/005', 'Petar', 'Perić', 3, 'Racunarstvo', 140, 9.3, 23, 1, 'Budzet', 0, 0),
+('2021/006', 'Ivana', 'Ilić', 3, 'Informatika', 133, 8.9, 22, 2, 'Samofinansiranje', 150000, 0.15),
+('2021/007', 'Luka', 'Nedić', 4, 'Racunarstvo', 180, 9.7, 29, 0, 'Budzet', 0, 0),
+('2021/008', 'Sara', 'Vasiljević', 4, 'Menadžment', 165, 8.1, 27, 3, 'Samofinansiranje', 150000, 0.05),
+('2021/009', 'Milan', 'Đurić', 4, 'Racunarstvo', 175, 9.4, 28, 1, 'Budzet', 0, 0),
+('2021/010', 'Teodora', 'Kostić', 1, 'Racunarstvo', 50, 7.5, 8, 2, 'Samofinansiranje', 150000, 0),
+
+('2022/011', 'Stefan', 'Gavrilović', 1, 'Informatika', 48, 7.2, 7, 3, 'Budzet', 0, 0),
+('2022/012', 'Marija', 'Panić', 2, 'Racunarstvo', 92, 8.8, 16, 2, 'Samofinansiranje', 150000, 0.05),
+('2022/013', 'Andreja', 'Stanojević', 3, 'Informatika', 136, 9.0, 22, 1, 'Budzet', 0, 0),
+('2022/014', 'Milica', 'Živković', 4, 'Menadžment', 160, 8.0, 25, 4, 'Samofinansiranje', 150000, 0.2),
+('2022/015', 'Vladimir', 'Rajić', 3, 'Racunarstvo', 142, 9.5, 24, 0, 'Budzet', 0, 0),
+('2022/016', 'Tamara', 'Milić', 2, 'Informatika', 90, 8.7, 15, 1, 'Samofinansiranje', 150000, 0.1),
+('2022/017', 'Bogdan', 'Ivanović', 1, 'Racunarstvo', 45, 7.0, 7, 3, 'Samofinansiranje', 150000, 0),
+('2022/018', 'Katarina', 'Lazić', 2, 'Menadžment', 80, 7.9, 13, 3, 'Samofinansiranje', 150000, 0.05),
+('2022/019', 'Relja', 'Janković', 1, 'Racunarstvo', 55, 8.2, 9, 1, 'Budzet', 0, 0),
+('2022/020', 'Isidora', 'Dragić', 4, 'Informatika', 170, 9.3, 28, 0, 'Budzet', 0, 0),
+
+('2023/021', 'Nikolina', 'Veselinović', 1, 'Racunarstvo', 42, 6.9, 6, 4, 'Samofinansiranje', 150000, 0.05),
+('2023/022', 'Uroš', 'Tomić', 1, 'Informatika', 50, 7.4, 8, 2, 'Budzet', 0, 0),
+('2023/023', 'Nina', 'Kovačević', 2, 'Racunarstvo', 91, 8.6, 15, 1, 'Samofinansiranje', 150000, 0.1),
+('2023/024', 'Aleksa', 'Vukanović', 2, 'Informatika', 89, 8.4, 14, 2, 'Budzet', 0, 0),
+('2023/025', 'Jovana', 'Blagojević', 3, 'Racunarstvo', 139, 9.1, 23, 0, 'Budzet', 0, 0),
+('2023/026', 'Mihajlo', 'Novaković', 4, 'Racunarstvo', 176, 9.6, 28, 0, 'Budzet', 0, 0),
+('2023/027', 'Maja', 'Bojović', 4, 'Menadžment', 162, 8.2, 26, 2, 'Samofinansiranje', 150000, 0.1),
+('2023/028', 'Veljko', 'Mišić', 1, 'Racunarstvo', 47, 7.3, 7, 3, 'Samofinansiranje', 150000, 0),
+('2023/029', 'Anđela', 'Đokić', 2, 'Informatika', 93, 8.9, 16, 1, 'Budzet', 0, 0),
+('2023/030', 'Filip', 'Petrović', 3, 'Menadžment', 135, 7.8, 20, 5, 'Samofinansiranje', 150000, 0.2),
+
+('2024/031', 'Lana', 'Kozić', 1, 'Informatika', 44, 7.1, 7, 3, 'Samofinansiranje', 150000, 0),
+('2024/032', 'Ognjen', 'Vuković', 1, 'Racunarstvo', 53, 8.3, 9, 1, 'Budzet', 0, 0),
+('2024/033', 'Marta', 'Stevanović', 2, 'Menadžment', 82, 7.7, 13, 3, 'Samofinansiranje', 150000, 0.05),
+('2024/034', 'Andrej', 'Simić', 3, 'Racunarstvo', 141, 9.2, 24, 0, 'Budzet', 0, 0),
+('2024/035', 'Dušan', 'Kovač', 4, 'Informatika', 169, 9.4, 27, 1, 'Budzet', 0, 0);

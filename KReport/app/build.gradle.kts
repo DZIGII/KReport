@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm")
+    id("com.github.johnrengelman.shadow") version "8.1.1"
     application
 }
 
@@ -20,6 +21,7 @@ dependencies {
     runtimeOnly(project(":markdown"))
     implementation("com.opencsv:opencsv:5.8")
     implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.6")
 }
 
 tasks.test {
@@ -27,4 +29,18 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(11)
+}
+
+tasks {
+    shadowJar {
+        archiveBaseName.set("kreport")
+        archiveVersion.set("1.0")
+        archiveClassifier.set("")
+
+        mergeServiceFiles()
+    }
+}
+
+application {
+    mainClass.set("App")
 }

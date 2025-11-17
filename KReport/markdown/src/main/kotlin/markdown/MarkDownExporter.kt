@@ -1,9 +1,10 @@
 package markdown
 
-import org.commonmark.node.*
-import org.commonmark.parser.Parser
-import org.commonmark.renderer.html.HtmlRenderer
 import spec.ReportGenerator
+import spec.styles.CellStyle
+
+import spec.styles.StyleConfig
+import spec.styles.StyleType
 import java.io.File
 
 class MarkDownExporter : ReportGenerator {
@@ -14,7 +15,8 @@ class MarkDownExporter : ReportGenerator {
         rows: List<List<String>>,
         destination: String?,
         title: String?,
-        summary: Map<String, Any>
+        summary: Map<String, Any>,
+        styles: StyleConfig
     ): String {
         val markdownContent = buildString {
             title?.let {
@@ -25,16 +27,20 @@ class MarkDownExporter : ReportGenerator {
             if (header.isNotEmpty() && rows.isNotEmpty()) {
                 appendLine()
 
-                appendLine("| ${header.joinToString(" | ")} |")
+                val headerMd = header.mapIndexed { index, col ->
+                    mdFormat(col, styles.headerStyles[index])
+                }
+                appendLine("| ${headerMd.joinToString(" | ")} |")
+
 
                 val alignments = header.map { ":---:" }
                 appendLine("|${alignments.joinToString("|")}|")
 
                 rows.forEach { row ->
-                    val formattedRow = row.map { cell ->
-                        cell.replace("|", "\\|")
+                    val rowMd = row.mapIndexed { colIndex, cell ->
+                        mdFormat(cell, styles.columnStyles[colIndex])
                     }
-                    appendLine("| ${formattedRow.joinToString(" | ")} |")
+                    appendLine("| ${rowMd.joinToString(" | ")} |")
                 }
                 appendLine()
             }
@@ -70,4 +76,19 @@ class MarkDownExporter : ReportGenerator {
 
         return markdownContent
     }
+
+    private fun mdFormat(cell: String, style: CellStyle?): String {
+        var text = cell
+
+        style?.styles?.forEach { (type, value) ->
+            when (type) {
+                StyleType.BOLD -> text = "**$text**"
+                StyleType.ITALIC -> text = "*$text*"
+                StyleType.COLOR_TEXT -> text = "<span style=\"color:$value\">$text</span>"
+            }
+        }
+
+        return text
+    }
+
 }
