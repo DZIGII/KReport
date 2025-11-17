@@ -35,7 +35,15 @@ object App {
             header = h
             rows = r
         } else {
-            error("citanje iz baze jos nije implementirano")
+            print("Unesi putanju do .db fajla: ")
+            val dbPath = readLine()!!.trim()
+
+            print("Unesi naziv tabele: ")
+            val table = readLine()!!.trim()
+
+            val (h, r) = DataBaseDataReader.readTable(dbPath, table)
+            header = h
+            rows = r
         }
 
         println("\nIzaberi exporter:")

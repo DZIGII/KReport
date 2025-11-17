@@ -21,7 +21,7 @@ dependencies {
     runtimeOnly(project(":markdown"))
     implementation("com.opencsv:opencsv:5.8")
     implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.6")
+    implementation("org.xerial:sqlite-jdbc:3.45.1.0")
 }
 
 tasks.test {
